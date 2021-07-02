@@ -46,7 +46,7 @@ class App < Grape::API
   resource :gift_cards do
     desc "Returns a gift card's current balance"
     params do
-      requires :number, existing_gift_card_number: true
+      requires :number
     end
     post :check_balance do
       if GIFT_CARD_BALANCES.key?(params[:number])
